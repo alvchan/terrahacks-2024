@@ -1,10 +1,12 @@
 import java.awt.*;      
 import java.awt.event.*; 
 import javax.swing.*;
+import java.util.*;
+import java.io.*;
 
-
-public class Gui extends JFrame{
-
+public class Gui extends JFrame implements ActionListener{
+   
+   JButton day1 = new JButton("1");
    public Gui()  
    {   
       JFrame frame = new JFrame("Arctic Tracker");
@@ -19,8 +21,16 @@ public class Gui extends JFrame{
       frame.setVisible(true);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setLayout(null);
-      frame.getContentPane().setBackground(new Color(108,146,219)); 
-      
+      frame.getContentPane().setBackground(new Color(108,146,219));
+      /* some sort of button thing
+      day1.setForeground(new Color(85,145,169));
+      day1.setFocusPainted(false);
+      day1.setBackground(new Color(11,78,120));
+      day1.setVisible(true);
+      day1.setActionCommand("day1");
+      day1.addActionListener( this );
+      add(day1);
+      */
    }   
       
    
@@ -47,6 +57,13 @@ public class Gui extends JFrame{
          g.setFont(largeSerifFont);
          g.drawString("ARCTIC", 230, 630);
          g.drawString("TRACKER", 200, 680);
+      }
+   }
+   public void actionPerformed(ActionEvent evt){
+      if (evt.getActionCommand().equals("day1")){
+         dispose();
+         day1();
+         repaint();
       }
    }
 }
