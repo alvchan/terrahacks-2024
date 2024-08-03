@@ -14,25 +14,20 @@ public class Vec2 {
 		this.y = other.y;
 	}
 
-	public void add(Vec2 other) {
-		x += other.x;
-		y += other.y;
-		
+	public Vec2 add(Vec2 other) {
+		return new Vec2(x + other.x, y + other.y);		
 	}
 
-	public void sub(Vec2 other) {
-		x -= other.x;
-		y -= other.y;
+	public Vec2 sub(Vec2 other) {
+		return new Vec2(x - other.x, y - other.y);
 	}
 
-	public void mult(double factor) {
-		x *= factor;
-		y *= factor;
+	public Vec2 mult(double factor) {
+		return new Vec2(x * factor, y * factor);
 	}
 
-	public void divide(double divider) {
-		x /= divider;
-		y /= divider;
+	public Vec2 divide(double divider) {
+		return new Vec2(x / divider, y / divider);
 	}
 
 	public double mag() {
