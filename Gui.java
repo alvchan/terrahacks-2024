@@ -2,11 +2,12 @@ import java.awt.*;
 import java.awt.event.*; 
 import javax.swing.*;
 import java.util.*;
+import java.util.concurrent.Flow;
 import java.io.*;
 
-public class Gui extends JFrame implements ActionListener{
+public class Gui extends JFrame{
    
-   JButton day1 = new JButton("1");
+   
    public Gui()  
    {   
       JFrame frame = new JFrame("Arctic Tracker");
@@ -16,21 +17,32 @@ public class Gui extends JFrame implements ActionListener{
       int y = (screenSize.height - frameSize.height) / 4;
       frame.setLocation(x, y);
       frame.setSize(720, 960);
-      frame.add(new Drawing());
+      //frame.add(new Drawing());
+      
       frame.setResizable(false);
       frame.setVisible(true);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setLayout(null);
+      frame.setLayout(new FlowLayout());
       frame.getContentPane().setBackground(new Color(108,146,219));
-      /* some sort of button thing
-      day1.setForeground(new Color(85,145,169));
-      day1.setFocusPainted(false);
-      day1.setBackground(new Color(11,78,120));
-      day1.setVisible(true);
-      day1.setActionCommand("day1");
-      day1.addActionListener( this );
-      add(day1);
-      */
+      JPanel btns = new JPanel();
+      btns.setLayout(new FlowLayout());
+      btns.setBackground(new Color(108,146,219));
+      JButton stats = new JButton("stats");
+      stats.setForeground(new Color(85,145,169));
+      stats.setFocusPainted(false);
+      stats.setBackground(new Color(11,78,120));
+      btns.add(stats);
+      JButton icecap = new JButton("Ice Cap");
+      icecap.setForeground(new Color(85,145,169));
+      icecap.setFocusPainted(false);
+      icecap.setBackground(new Color(11,78,120));
+      btns.add(icecap);
+      
+      frame.add(btns);
+      
+      
+      
+    
    }   
       
    
@@ -41,7 +53,6 @@ public class Gui extends JFrame implements ActionListener{
    }
 
    public class Drawing extends JComponent{ 
-
       public Drawing(){}
       
       public void paint(Graphics g){ 
@@ -59,11 +70,5 @@ public class Gui extends JFrame implements ActionListener{
          g.drawString("TRACKER", 200, 680);
       }
    }
-   public void actionPerformed(ActionEvent evt){
-      if (evt.getActionCommand().equals("day1")){
-         dispose();
-         day1();
-         repaint();
-      }
-   }
+   
 }
