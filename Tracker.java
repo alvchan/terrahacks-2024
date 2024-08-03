@@ -5,6 +5,7 @@ import java.util.*;
 public class Tracker {
 
     public void go() {
+       
         try {
             Process p = Runtime.getRuntime().exec("tasklist");
             BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -48,22 +49,26 @@ public class Tracker {
             List<Map.Entry<String, Long>> entryList = new ArrayList<>(hashMap.entrySet());
             entryList.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
 
-            // Print the top 5 entries
+            // Print the top 5 entries and add them to the 'retur' HashMap
             System.out.println("Top 5 processes by memory usage:");
-            entryList.stream().limit(5).forEach(entry ->
-                System.out.println(entry.getKey() + ": " + entry.getValue() + " KB")
-            );
+            entryList.stream().limit(5).forEach(entry -> {
+                retur.put(entry.getKey(), entry.getValue());
+            });
 
             input.close();
         } catch (Exception err) {
             err.printStackTrace();
         }
+         // Ensure a HashMap is always returned
     }
 
     // Method to convert memory string to long value
     public static long parseMemoryValue(String memory) {
         return Long.parseLong(memory.replace(",", ""));
     }
-
-  
+	public HashMap<String ,Long> value()
+	{
+		go();
+		return retur;
+	}
 }
