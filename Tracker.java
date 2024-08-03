@@ -2,14 +2,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Tracker {
-	public Tracker() {
-		;
-	}
-
 	public void go() {
 		try {
 			String line;
-			Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe");
+			Process p = Runtime.getRuntime().exec("tasklist");
 			BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			line = input.readLine();
 			while (line != null) {
