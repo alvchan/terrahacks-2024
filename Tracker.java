@@ -13,9 +13,9 @@ public class Tracker {
             HashMap<String, Long> hashMap = new HashMap<>();
 
             // Skip header lines
-            for (int i = 0; i < 3; i++) {
-                input.readLine();
-            }
+            input.readLine();
+            input.readLine();
+            input.readLine();
 
             String line;
             while ((line = input.readLine()) != null) {
