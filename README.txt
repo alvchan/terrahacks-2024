@@ -1,1 +1,0 @@
-Hello, this is our TerraHacks repo. Our team consists of Alvin Chan, James Boase, and Frank Pasztor. Our project is
