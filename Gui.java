@@ -1,16 +1,26 @@
+import javax.swing.JFrame;
+import javax.swing.JComponent;
+import java.awt.Graphics;
+import java.awt.Color;
 import java.awt.*;      
 import java.awt.event.*; 
-import javax.swing.*;
-import java.util.*;
-import java.util.concurrent.Flow;
+import javax.swing.*;    
+import java.awt.Dimension;
+import javax.swing.BorderFactory;
+import java.awt.Desktop;
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.awt.Toolkit;
+import java.awt.Dimension;
+
 
 public class Gui extends JFrame implements ActionListener{
    
-   
+   JFrame frame = new JFrame("Arctic Tracker");
    public Gui()  
    {   
-      JFrame frame = new JFrame("Arctic Tracker");
+      
       Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
       Dimension frameSize = getSize();
       int x = ((screenSize.width - frameSize.width) / 4)+200;
@@ -55,9 +65,10 @@ public class Gui extends JFrame implements ActionListener{
       buttons.setBackground(new Color(108,146,219));
       buttons.add(stats);
       buttons.add(icecap);
-      frame.add(label1);
+      frame.add(label1);   
       frame.add(label2);
       frame.add(buttons);
+      
       
       
     
@@ -74,12 +85,38 @@ public class Gui extends JFrame implements ActionListener{
    public void actionPerformed(ActionEvent e) {
        // TODO Auto-generated method stub
        if (e.getActionCommand().equals("stats")){
-         //make an instance of stats class here
-         System.out.println("test");
+         frame.dispose();
+         Stats s1 = new Stats();
+         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+         Dimension frameSize = getSize();
+         int x = ((screenSize.width - frameSize.width) / 4)+200;
+         int y = (screenSize.height - frameSize.height) / 4;
+         s1.setLocation(x, y);
+         s1.setSize(1280, 720);
+         
+         
+         s1.setResizable(true);
+         s1.setVisible(true);
+         s1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         s1.setLayout(new GridLayout(1, 2, 15, 15));
+         s1.getContentPane().setBackground(new Color(108,146,219));
        }
        if (e.getActionCommand().equals("icecap")){
-         //make an instance of icecap class here
-         System.out.println("test2");
+         frame.dispose();
+         IceCap i1 = new IceCap();
+         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+         Dimension frameSize = getSize();
+         int x = ((screenSize.width - frameSize.width) / 4)+200;
+         int y = (screenSize.height - frameSize.height) / 4;
+         i1.setLocation(x, y);
+         i1.setSize(1280, 720);
+         
+         
+         i1.setResizable(true);
+         i1.setVisible(true);
+         i1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         i1.setLayout(new GridLayout(1, 2, 15, 15));
+         i1.getContentPane().setBackground(new Color(108,146,219));
        }
    }
 }
