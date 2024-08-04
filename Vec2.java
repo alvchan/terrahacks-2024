@@ -31,7 +31,7 @@ public class Vec2 {
 	}
 
 	public double mag() {
-		return Math.sqrt(x ** 2 + y ** 2);
+		return Math.sqrt(x*x + y*y);
 	}
 
 	public Vec2 normalize() {
