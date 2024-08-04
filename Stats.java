@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.*;
 
-public class Stats extends JFrame{
+public class Stats extends JFrame implements ActionListener{
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     Dimension frameSize = getSize();
     public int fontSize = (int) screenSize.width / 50;
@@ -66,6 +66,8 @@ public class Stats extends JFrame{
         label10.setBorder(BorderFactory.createLineBorder(Color.black));
         //Create back button
         JButton backButton = new JButton("Back");
+        backButton.addActionListener(this);
+        backButton.setActionCommand("back");
         backButton.setFont(new Font("Arial", Font.PLAIN, fontSize));
         label10.setBorder(BorderFactory.createLineBorder(Color.black));
         JPanel numAndBack = new JPanel();
@@ -83,7 +85,12 @@ public class Stats extends JFrame{
         numList.add(numAndBack);
         add(numList);
     }
-
+    public void actionPerformed(ActionEvent e){
+        if (e.getActionCommand().equals("back")){
+            dispose();
+            Gui g1 = new Gui();
+        }
+    }
     
 
 }
