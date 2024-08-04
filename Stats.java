@@ -65,13 +65,14 @@ public class Stats extends JFrame{
         label10.setFont(new Font("Arial", Font.PLAIN, fontSize));
         label10.setBorder(BorderFactory.createLineBorder(Color.black));
         //Create back button
-        JButton backButton = new JButtion("Back");
+        JButton backButton = new JButton("Back");
         backButton.setFont(new Font("Arial", Font.PLAIN, fontSize));
         label10.setBorder(BorderFactory.createLineBorder(Color.black));
         JPanel numAndBack = new JPanel();
-        numAndBack.setLayout(new GridLayout(2, 1));
+        numAndBack.setLayout(new GridLayout(1, 2));
         numAndBack.add(label10);
         numAndBack.add(backButton);
+        numAndBack.setBackground(new Color(108,146,219));
         JPanel numList = new JPanel();
         numList.setBackground(new Color(108,146,219));
         numList.setLayout(new GridLayout(5, 1, 10, 10));
