@@ -26,10 +26,10 @@ public class Gui extends JFrame implements ActionListener{
       int x = ((screenSize.width - frameSize.width) / 4)+200;
       int y = (screenSize.height - frameSize.height) / 4;
       frame.setLocation(x, y);
-      frame.setSize(720, 960);
+      frame.setSize(480, 720);
       //frame.add(new Drawing());
       
-      frame.setResizable(false);
+      frame.setResizable(true);
       frame.setVisible(true);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.setLayout(new GridLayout(3, 1, 15, 15));
@@ -92,7 +92,7 @@ public class Gui extends JFrame implements ActionListener{
          int x = ((screenSize.width - frameSize.width) / 4)+200;
          int y = (screenSize.height - frameSize.height) / 4;
          s1.setLocation(x, y);
-         s1.setSize(1280, 720);
+         s1.setSize(640, 480);
          
          
          s1.setResizable(true);
@@ -109,7 +109,7 @@ public class Gui extends JFrame implements ActionListener{
          int x = ((screenSize.width - frameSize.width) / 4)+200;
          int y = (screenSize.height - frameSize.height) / 4;
          i1.setLocation(x, y);
-         i1.setSize(1280, 720);
+         i1.setSize(640, 480);
          
          
          i1.setResizable(true);
