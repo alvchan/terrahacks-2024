@@ -93,7 +93,7 @@ public class IceCap extends JFrame{
 		double[] poly = new double[points.length];
 
 		for (int i = 0; i < points.length; i++) {
-			poly[i] = points[i].x;
+			poly[i] = points[i].getX();
 		}
 
 		return poly;
@@ -103,8 +103,10 @@ public class IceCap extends JFrame{
 		double [] poly = new double[points.length];
 		
 		for (int i = 0; i < points.length; i++) {
-			poly[i] = points[i].y;
+			poly[i] = points[i].getY();
 		}
+
+		return poly;
 	}
 
 	public Vec2 getCenter() {

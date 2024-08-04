@@ -41,10 +41,10 @@ public class Vec2 {
 	}
 
 	public double getX() {
-		return point.x;
+		return x;
 	}
 
 	public double getY() {
-		return point.y;
+		return y;
 	}
 }
