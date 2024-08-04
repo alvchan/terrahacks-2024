@@ -16,7 +16,7 @@ public class Stats extends JFrame implements ActionListener{
     Tracker t1;
     public Stats(){
         t1 = new Tracker();
-        TreeMap<String, Long> values = t1.value();
+        HashMap<String, Long> values = t1.value();
         ArrayList<String> apps = new ArrayList<String>();
         for (String s : values.keySet()){
             apps.add(s);
