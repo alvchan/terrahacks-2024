@@ -86,21 +86,19 @@ public class IceCap extends JFrame{
     } 
 	public boolean isInside(Vec2 point) {
 		// TODO: fill this out
-		;
+		return true;
 	}
 
 	public Vec2 getCenter() {
-		double sumX = 0;
-		double sumY = 0;
+		Vec2 sum = new Vec2(0, 0);
 		int n = 0;
 
 		for (Vec2 point : points) {
-			sumX += point.x;
-			sumY += point.y;
+			sum = sum.add(point);
 			n++;
 		}
 
-		return new Vec2(sumX/n, sumY/n);
+		return new Vec2(sum.divide(n));
 	}
 
 	public void shrink() {
@@ -109,11 +107,8 @@ public class IceCap extends JFrame{
 		for (Vec2 point : points) {
 			point = center.sub(point);
 			point.normalize();
-			point.mult(scale);
+			//point.mult(scale);
 		}
 	}
-
-
-      
 }
 
