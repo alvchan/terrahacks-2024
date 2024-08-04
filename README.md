@@ -12,3 +12,9 @@ Includes introductory slides (team name + #), project description and reflection
 # Arctic Tracker - a computer usage tracker & ice cap visualization
 
 ... project details here ...
+
+# About Us
+
+We're just a group of friends hanging out and trying to make something cool for the first time.
+Although we may be inexperienced, we're still here to try our best and have a lot of fun together.
+
