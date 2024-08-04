@@ -24,14 +24,19 @@ public class Stats extends JFrame{
         //Create labels
         JLabel label1 = new JLabel("1. " + apps.get(0));
         label1.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label1.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label2 = new JLabel("2. " + apps.get(1));
         label2.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label2.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label3 = new JLabel("3. " + apps.get(2));
         label3.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label3.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label4 = new JLabel("4. " + apps.get(3));
         label4.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label4.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label5 = new JLabel("5. " + apps.get(4));
         label5.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label5.setBorder(BorderFactory.createLineBorder(Color.black));
         //Create Panel
         JPanel appList = new JPanel();
         appList.setBackground(new Color(108,146,219));
@@ -46,14 +51,19 @@ public class Stats extends JFrame{
         //Create other labels
         JLabel label6 = new JLabel("" + values.get(apps.get(0)));
         label6.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label6.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label7 = new JLabel("" + values.get(apps.get(1)));
         label7.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label7.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label8 = new JLabel("" + values.get(apps.get(2)));
         label8.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label8.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label9 = new JLabel("" + values.get(apps.get(3)));
         label9.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label9.setBorder(BorderFactory.createLineBorder(Color.black));
         JLabel label10 = new JLabel("" + values.get(apps.get(4)));
         label10.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label10.setBorder(BorderFactory.createLineBorder(Color.black));
         JPanel numList = new JPanel();
         numList.setBackground(new Color(108,146,219));
         numList.setLayout(new GridLayout(5, 1, 10, 10));
