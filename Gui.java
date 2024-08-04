@@ -16,19 +16,19 @@ import java.awt.Dimension;
 
 
 public class Gui extends JFrame implements ActionListener{
-   
+   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+   Dimension frameSize = getSize();
+   public int fontSize = (int) screenSize.width / 50;
    JFrame frame = new JFrame("Arctic Tracker");
    public Gui()  
    {   
       
-      Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-      Dimension frameSize = getSize();
+      
       int x = ((screenSize.width - frameSize.width) / 4)+200;
       int y = (screenSize.height - frameSize.height) / 4;
       frame.setLocation(x, y);
       frame.setSize(520, 720);
-      //frame.add(new Drawing());
-      int fontSize = (int) screenSize.width / 50;
+      //frame.add(new Drawing()); 
       frame.setResizable(true);
       frame.setVisible(true);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,7 +73,9 @@ public class Gui extends JFrame implements ActionListener{
       
     
    }   
-      
+   public int getFontSize(){
+      return fontSize;
+   }   
    
 
    public static void main (String[] args)
@@ -87,8 +89,6 @@ public class Gui extends JFrame implements ActionListener{
        if (e.getActionCommand().equals("stats")){
          frame.dispose();
          Stats s1 = new Stats();
-         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-         Dimension frameSize = getSize();
          int x = ((screenSize.width - frameSize.width) / 4)+200;
          int y = (screenSize.height - frameSize.height) / 4;
          s1.setLocation(x, y);
@@ -104,8 +104,6 @@ public class Gui extends JFrame implements ActionListener{
        if (e.getActionCommand().equals("icecap")){
          frame.dispose();
          IceCap i1 = new IceCap();
-         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-         Dimension frameSize = getSize();
          int x = ((screenSize.width - frameSize.width) / 4)+200;
          int y = (screenSize.height - frameSize.height) / 4;
          i1.setLocation(x, y);
