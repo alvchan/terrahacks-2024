@@ -89,6 +89,24 @@ public class IceCap extends JFrame{
 		return true;
 	}
 
+	public double[] getPolyX() {
+		double[] poly = new double[points.length];
+
+		for (int i = 0; i < points.length; i++) {
+			poly[i] = points[i].x;
+		}
+
+		return poly;
+	}
+
+	public double[] getPolyY() {
+		double [] poly = new double[points.length];
+		
+		for (int i = 0; i < points.length; i++) {
+			poly[i] = points[i].y;
+		}
+	}
+
 	public Vec2 getCenter() {
 		Vec2 sum = new Vec2(0, 0);
 		int n = 0;

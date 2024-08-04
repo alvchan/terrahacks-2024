@@ -39,4 +39,12 @@ public class Vec2 {
 		unitVec.divide(unitVec.mag());
 		return unitVec;
 	}
+
+	public double getX() {
+		return point.x;
+	}
+
+	public double getY() {
+		return point.y;
+	}
 }
