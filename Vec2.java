@@ -36,7 +36,7 @@ public class Vec2 {
 
 	public Vec2 normalize() {
 		Vec2 unitVec = new Vec2(this);
-		unitVec.divide(mag(unitVec));
+		unitVec.divide(unitVec.mag());
 		return unitVec;
 	}
 }
