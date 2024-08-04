@@ -26,9 +26,9 @@ public class Gui extends JFrame implements ActionListener{
       int x = ((screenSize.width - frameSize.width) / 4)+200;
       int y = (screenSize.height - frameSize.height) / 4;
       frame.setLocation(x, y);
-      frame.setSize(480, 720);
+      frame.setSize(520, 720);
       //frame.add(new Drawing());
-      
+      int fontSize = (int) screenSize.width / 50;
       frame.setResizable(true);
       frame.setVisible(true);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,10 +39,10 @@ public class Gui extends JFrame implements ActionListener{
 
       //Title label
       JLabel label1 = new JLabel("Arctic", SwingConstants.CENTER);
-      label1.setFont(new Font("Arial", Font.BOLD, 80));
+      label1.setFont(new Font("Arial", Font.BOLD, fontSize));
       label1.setVerticalAlignment(SwingConstants.BOTTOM);
       JLabel label2 = new JLabel("Tracker", SwingConstants.CENTER);
-      label2.setFont(new Font("Arial", Font.BOLD, 80));
+      label2.setFont(new Font("Arial", Font.BOLD, fontSize));
       label2.setVerticalAlignment(SwingConstants.TOP);
       //Stats button
       JButton stats = new JButton("Stats");
@@ -51,7 +51,7 @@ public class Gui extends JFrame implements ActionListener{
       stats.setBackground(new Color(11,78,120));
       stats.addActionListener(this);
       stats.setActionCommand("stats");
-      stats.setFont(new Font("Arial", Font.PLAIN, 70));
+      stats.setFont(new Font("Arial", Font.PLAIN, fontSize));
       //Ice cap
       JButton icecap = new JButton("Ice Cap");
       icecap.setForeground(new Color(85,145,169));
@@ -59,7 +59,7 @@ public class Gui extends JFrame implements ActionListener{
       icecap.setBackground(new Color(11,78,120));
       icecap.addActionListener(this);
       icecap.setActionCommand("icecap");
-      icecap.setFont(new Font("Arial", Font.PLAIN, 70));
+      icecap.setFont(new Font("Arial", Font.PLAIN, fontSize));
       JPanel buttons = new JPanel();
       buttons.setLayout(new GridLayout(1,2));
       buttons.setBackground(new Color(108,146,219));
