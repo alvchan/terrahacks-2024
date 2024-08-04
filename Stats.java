@@ -45,15 +45,15 @@ public class Stats extends JFrame{
 
         //Create other labels
         JLabel label6 = new JLabel("" + values.get(apps.get(0)));
-        label1.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label6.setFont(new Font("Arial", Font.PLAIN, fontSize));
         JLabel label7 = new JLabel("" + values.get(apps.get(1)));
-        label2.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label7.setFont(new Font("Arial", Font.PLAIN, fontSize));
         JLabel label8 = new JLabel("" + values.get(apps.get(2)));
-        label3.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label8.setFont(new Font("Arial", Font.PLAIN, fontSize));
         JLabel label9 = new JLabel("" + values.get(apps.get(3)));
-        label4.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label9.setFont(new Font("Arial", Font.PLAIN, fontSize));
         JLabel label10 = new JLabel("" + values.get(apps.get(4)));
-        label5.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label10.setFont(new Font("Arial", Font.PLAIN, fontSize));
         JPanel numList = new JPanel();
         numList.setBackground(new Color(108,146,219));
         numList.setLayout(new GridLayout(5, 1, 10, 10));
