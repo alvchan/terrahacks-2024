@@ -64,6 +64,14 @@ public class Stats extends JFrame{
         JLabel label10 = new JLabel("" + values.get(apps.get(4)));
         label10.setFont(new Font("Arial", Font.PLAIN, fontSize));
         label10.setBorder(BorderFactory.createLineBorder(Color.black));
+        //Create back button
+        JButton backButton = new JButtion("Back");
+        backButton.setFont(new Font("Arial", Font.PLAIN, fontSize));
+        label10.setBorder(BorderFactory.createLineBorder(Color.black));
+        JPanel numAndBack = new JPanel();
+        numAndBack.setLayout(new GridLayout(2, 1));
+        numAndBack.add(label10);
+        numAndBack.add(backButton);
         JPanel numList = new JPanel();
         numList.setBackground(new Color(108,146,219));
         numList.setLayout(new GridLayout(5, 1, 10, 10));
@@ -71,7 +79,7 @@ public class Stats extends JFrame{
         numList.add(label7);
         numList.add(label8);
         numList.add(label9);
-        numList.add(label10);
+        numList.add(numAndBack);
         add(numList);
     }
 
