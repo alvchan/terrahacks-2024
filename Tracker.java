@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Tracker {
-	HashMap<String, Long> retur = new HashMap<>();
+	TreeMap<String, Long> retur = new TreeMap<>();
     public void go() {
        
         try {
@@ -66,7 +66,7 @@ public class Tracker {
     public static long parseMemoryValue(String memory) {
         return Long.parseLong(memory.replace(",", ""));
     }
-	public HashMap<String ,Long> value()
+	public TreeMap<String ,Long> value()
 	{
 		go();
 		return retur;

@@ -1,11 +1,11 @@
-import java.util.*;
-import java.awt.* ;
-import java.awt.event.*;
+import java.awt.*;      
+import java.awt.event.*; 
 import javax.swing.*;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.io.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 
 public class IceCap extends JFrame{
 	private Vec2[] points = {
@@ -82,28 +82,31 @@ public class IceCap extends JFrame{
         appList.add(label5);
         add(graph);
         add(appList);
-
+		
+		
+	
+	
     } 
 	public boolean isInside(Vec2 point) {
 		// TODO: fill this out
 		return true;
 	}
 
-	public double[] getPolyX() {
-		double[] poly = new double[points.length];
+	public int[] getPolyX() {
+		int[] poly = new int[points.length];
 
 		for (int i = 0; i < points.length; i++) {
-			poly[i] = points[i].getX();
+			poly[i] = (int) points[i].getX();
 		}
 
 		return poly;
 	}
 
-	public double[] getPolyY() {
-		double [] poly = new double[points.length];
+	public int[] getPolyY() {
+		int [] poly = new int[points.length];
 		
 		for (int i = 0; i < points.length; i++) {
-			poly[i] = points[i].getY();
+			poly[i] = (int) points[i].getY();
 		}
 
 		return poly;
@@ -130,5 +133,16 @@ public class IceCap extends JFrame{
 			//point.mult(scale);
 		}
 	}
+	
+	public class Drawing extends JComponent{
+		/***The Drawing constructor.*/
+		public Drawing(){}
+		/***This method makes the splash screen drawing*/
+		public void paint(Graphics g){  
+		  
+		   g.setColor(new Color(255,255,255));
+		   g.fillPolygon(getPolyX(), getPolyY(), points.length);
+		}
+	 }
 }
 

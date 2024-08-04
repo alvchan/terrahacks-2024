@@ -1,18 +1,10 @@
-import javax.swing.JFrame;
-import javax.swing.JComponent;
-import java.awt.Graphics;
-import java.awt.Color;
 import java.awt.*;      
 import java.awt.event.*; 
-import javax.swing.*;    
-import java.awt.Dimension;
-import javax.swing.BorderFactory;
-import java.awt.Desktop;
+import javax.swing.*;
+
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.awt.Toolkit;
-import java.awt.Dimension;
 
 
 public class Gui extends JFrame implements ActionListener{
@@ -20,6 +12,7 @@ public class Gui extends JFrame implements ActionListener{
    Dimension frameSize = getSize();
    public int fontSize = (int) screenSize.width / 50;
    JFrame frame = new JFrame("Arctic Tracker");
+   IceCap i1;
    public Gui()  
    {   
       
@@ -103,7 +96,9 @@ public class Gui extends JFrame implements ActionListener{
        }
        if (e.getActionCommand().equals("icecap")){
          frame.dispose();
-         IceCap i1 = new IceCap();
+         i1 = new IceCap();
+         IceCap.Drawing d1 = i1.new Drawing();
+         i1.add(d1);
          int x = ((screenSize.width - frameSize.width) / 4)+200;
          int y = (screenSize.height - frameSize.height) / 4;
          i1.setLocation(x, y);
@@ -113,7 +108,7 @@ public class Gui extends JFrame implements ActionListener{
          i1.setResizable(true);
          i1.setVisible(true);
          i1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         i1.setLayout(new GridLayout(1, 2, 15, 15));
+         i1.setLayout(null);
          i1.getContentPane().setBackground(new Color(108,146,219));
        }
    }
